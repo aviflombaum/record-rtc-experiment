@@ -47,7 +47,7 @@ $(document).ready(function(){
   var startRecording = function() {
     // record the audio and video
     video_recorder.startRecording();
-    audio_recorder.startRecording();
+    // audio_recorder.startRecording();
 
     // update the UI
     $("#play_button").hide();
@@ -64,23 +64,23 @@ $(document).ready(function(){
   // stop recording
   var stopRecording = function() {
     // stop recorders
-    audio_recorder.stopRecording();
+    // audio_recorder.stopRecording();
     video_recorder.stopRecording();
 
     // set form data
     formData = new FormData();
 
-    var audio_blob = audio_recorder.getBlob();
-    formData.append("audio", audio_blob);
+    // var audio_blob = audio_recorder.getBlob();
+    // formData.append("audio", audio_blob);
 
     var video_blob = video_recorder.getBlob();
     formData.append("video", video_blob);
 
     // add players
-    var audio_player = document.createElement("audio");
-    audio_player.id = "audio-player";
-    audio_player.src = URL.createObjectURL(audio_blob);
-    $("#players").append(audio_player);
+    // var audio_player = document.createElement("audio");
+    // audio_player.id = "audio-player";
+    // audio_player.src = URL.createObjectURL(audio_blob);
+    // $("#players").append(audio_player);
 
     var video_payer = document.createElement("video");
     video_payer.id = "video-player";
